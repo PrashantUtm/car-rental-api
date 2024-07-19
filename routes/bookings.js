@@ -7,8 +7,8 @@ const  {
     updateMockedBooking
 } = require('../controllers/bookings.js');
 
-router.get('/bookings/', getMockedBookings);
-router.post('/bookings/', createMockedBooking);
-router.put('/bookings/:plateNumber', updateMockedBooking);
+router.get('/', getMockedBookings);
+router.post('/', createMockedBooking);
+router.put('/:plateNumber', updateMockedBooking);
 
 module.exports = router;

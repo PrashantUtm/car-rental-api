@@ -5,6 +5,7 @@ const getMockedBookings = ((req, res) => {
 });
 
 const createMockedBooking = ((req, res) => {
+    console.log('create');
     const newBooking = req.body;
     bookings.push(newBooking)
     res.status(201).json(newBooking)

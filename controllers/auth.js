@@ -43,14 +43,16 @@ const login = async (req, res, next) => {
 };
 
 const auth = (req, res, next) => {
-    const token = req.headers.auth
+    const token = req.headers.authorization
+    console.log(req.headers);
     if (token) {
       jwt.verify(token, jwtSecret, (err, decodedToken) => {
         if (err) {
           return res.status(401).json({ error: "Not authorized" })
         } else {
           if (decodedToken) {
-            req.username = decodedToken.id;
+            console.log(decodedToken);
+            //req.username = decodedToken.id;
             next()
           }
         }
