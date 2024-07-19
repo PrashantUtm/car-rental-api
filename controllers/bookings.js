@@ -1,12 +1,13 @@
 const bookings = [];
+const crypto = require("crypto");
 
 const getMockedBookings = ((req, res) => {
     return res.status(200).json(bookings);
 });
 
 const createMockedBooking = ((req, res) => {
-    console.log('create');
     const newBooking = req.body;
+    newBooking.id = crypto.randomBytes(16).toString("hex");
     bookings.push(newBooking)
     res.status(201).json(newBooking)
 });
