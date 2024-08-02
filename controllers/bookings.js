@@ -1,8 +1,10 @@
-const bookings = [];
+const bookings = require("../data/bookings.js");
 const crypto = require("crypto");
 
 const getMockedBookings = ((req, res) => {
-    return res.status(200).json(bookings);
+    const username = req.username;
+    const userBookings = bookings.filter(b => b.customerId === username);
+    return res.status(200).json(userBookings);
 });
 
 const createMockedBooking = ((req, res) => {

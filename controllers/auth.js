@@ -52,7 +52,7 @@ const auth = (req, res, next) => {
         } else {
           if (decodedToken) {
             console.log(decodedToken);
-            //req.username = decodedToken.id;
+            req.username = decodedToken.id;
             next()
           }
         }
