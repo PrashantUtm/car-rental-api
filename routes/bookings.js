@@ -9,6 +9,6 @@ const  {
 
 router.get('/', getMockedBookings);
 router.post('/', createMockedBooking);
-router.put('/:plateNumber', updateMockedBooking);
+router.put('/:id', updateMockedBooking);
 
 module.exports = router;
